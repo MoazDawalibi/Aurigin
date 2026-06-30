@@ -114,7 +114,6 @@ export default function App() {
         onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
         onToggleLanguage={() => setLanguage((current) => (current === 'en' ? 'ar' : 'en'))}
       />
-      <ApiNotice message={apiMessage} />
       {page === 'home' ? <HomePage settings={settings} products={sortedProducts} t={t} onNavigate={navigate} /> : null}
       {page === 'about' ? <AboutPage settings={settings} t={t} /> : null}
       {page === 'products' ? <ProductsPage settings={settings} products={sortedProducts} loading={loading} t={t} /> : null}
