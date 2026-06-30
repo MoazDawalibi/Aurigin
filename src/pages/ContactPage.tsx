@@ -1,5 +1,6 @@
 import { Phone } from 'lucide-react';
 import contactImage from '../assets/contact-sportwear.png';
+import qrImage from '../assets/qr.JPG';
 import { InstagramIcon, WhatsAppIcon } from '../components/BrandIcons';
 import type { Translation } from '../i18n';
 import type { WebsiteSettings } from '../types/api';
@@ -11,6 +12,8 @@ type ContactPageProps = {
 
 export function ContactPage({ settings, t }: ContactPageProps) {
   const phone = settings.whatsapp_phone ?? '+963958261912';
+  const instagram = settings.instagram ?? 'aurigin.fit';
+  const instagramUrl = settings.instagram_url ?? 'https://www.instagram.com/aurigin.fit';
   const whatsappUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`;
 
   return (
@@ -23,19 +26,25 @@ export function ContactPage({ settings, t }: ContactPageProps) {
         <div className="section-image-frame">
           <img src={contactImage} alt="Aurigin sportwear contact and order details" />
         </div>
-        <div className="contact-actions">
-          <a href={settings.instagram_url ?? 'https://www.instagram.com/Aurigin'} target="_blank" rel="noreferrer">
-            <InstagramIcon size={22} />
-            <span>@{settings.instagram ?? 'Aurigin'}</span>
-          </a>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer">
-            <WhatsAppIcon size={22} />
-            <span>WhatsApp {phone}</span>
-          </a>
-          <a href={`tel:${phone}`}>
-            <Phone size={22} />
-            <span>{phone}</span>
-          </a>
+        <div className="contact-stack">
+          <div className="contact-actions">
+            <a href={instagramUrl} target="_blank" rel="noreferrer">
+              <InstagramIcon size={22} />
+              <span>@{instagram}</span>
+            </a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer">
+              <WhatsAppIcon size={22} />
+              <span>WhatsApp {phone}</span>
+            </a>
+            <a href={`tel:${phone}`}>
+              <Phone size={22} />
+              <span>{phone}</span>
+            </a>
+          </div>
+          <div className="qr-card">
+            <img src={qrImage} alt="Aurigin Instagram QR code" />
+            <span>@{instagram}</span>
+          </div>
         </div>
       </div>
     </main>

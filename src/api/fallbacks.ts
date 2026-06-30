@@ -5,8 +5,8 @@ export const fallbackSettings: Required<WebsiteSettings> = {
   primary_color: '#75723d',
   secondary_color: '#212117',
   slogans: ['Build your Legacy', 'Every Legacy Has An Origin'],
-  instagram: 'Aurigin',
-  instagram_url: 'https://www.instagram.com/Aurigin',
+  instagram: 'aurigin.fit',
+  instagram_url: 'https://www.instagram.com/aurigin.fit',
   whatsapp_phone: '+963958261912',
   cart_status_message: 'Cart sharing will be available soon',
 };
