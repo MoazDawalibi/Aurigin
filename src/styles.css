@@ -1000,7 +1000,7 @@ h3 {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 13px;
-  width: min(100%, 320px);
+  width: min(100%, 380px);
   padding: 12px;
   color: var(--ink);
   background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
@@ -1010,8 +1010,8 @@ h3 {
 }
 
 .qr-card img {
-  width: clamp(82px, 9vw, 104px);
-  height: clamp(82px, 9vw, 104px);
+  width: clamp(112px, 12vw, 138px);
+  height: clamp(112px, 12vw, 138px);
   object-fit: cover;
   border: 1px solid rgba(117, 114, 61, 0.45);
   border-radius: 6px;
@@ -1115,7 +1115,7 @@ h3 {
 
   .qr-card {
     width: 100%;
-    max-width: 360px;
+    max-width: 410px;
   }
 
   .site-footer {
@@ -1200,8 +1200,8 @@ h3 {
   }
 
   .qr-card img {
-    width: 82px;
-    height: 82px;
+    width: 116px;
+    height: 116px;
   }
 
   .footer-links {
