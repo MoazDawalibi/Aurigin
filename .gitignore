@@ -1,0 +1,15 @@
+node_modules
+/dist
+.env
+.env.local
+
+# Keep this GitHub repo public-website only
+backend/
+src/admin/
+src/api/adminApi.ts
+src/types/admin.ts
+
+# OS/editor
+.DS_Store
+.vscode
+.idea
