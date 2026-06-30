@@ -10,10 +10,15 @@ type ContactPageProps = {
   t: Translation;
 };
 
+function getInstagram(settings: WebsiteSettings) {
+  const handle = !settings.instagram || settings.instagram.toLowerCase() === 'aurigin' ? 'aurigin.fit' : settings.instagram;
+  const url = !settings.instagram_url || /instagram\.com\/Aurigin\/?$/i.test(settings.instagram_url) ? 'https://www.instagram.com/aurigin.fit' : settings.instagram_url;
+  return { handle, url };
+}
+
 export function ContactPage({ settings, t }: ContactPageProps) {
   const phone = settings.whatsapp_phone ?? '+963958261912';
-  const instagram = settings.instagram ?? 'aurigin.fit';
-  const instagramUrl = settings.instagram_url ?? 'https://www.instagram.com/aurigin.fit';
+  const instagram = getInstagram(settings);
   const whatsappUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`;
 
   return (
@@ -28,9 +33,9 @@ export function ContactPage({ settings, t }: ContactPageProps) {
         </div>
         <div className="contact-stack">
           <div className="contact-actions">
-            <a href={instagramUrl} target="_blank" rel="noreferrer">
+            <a href={instagram.url} target="_blank" rel="noreferrer">
               <InstagramIcon size={22} />
-              <span>@{instagram}</span>
+              <span>@{instagram.handle}</span>
             </a>
             <a href={whatsappUrl} target="_blank" rel="noreferrer">
               <WhatsAppIcon size={22} />
@@ -43,7 +48,7 @@ export function ContactPage({ settings, t }: ContactPageProps) {
           </div>
           <div className="qr-card">
             <img src={qrImage} alt="Aurigin Instagram QR code" />
-            <span>@{instagram}</span>
+            <span>@{instagram.handle}</span>
           </div>
         </div>
       </div>
